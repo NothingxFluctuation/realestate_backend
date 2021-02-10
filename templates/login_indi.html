@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'form.css' %}">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <title>Login</title>
+</head>
+
+<body>
+    {% if messages %}
+    <div id="message">
+        {% for message in messages %}
+        <p id='message_itself'>{{ message }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+
+    <div id="form_body">
+
+        <div class="container_login">
+
+            <div id='heading'>
+                <p>تسجيل الدخول</p>
+            </div>
+
+            <div id="form_outer_login">
+
+                <form action="/login_indi" method="post" id='form_login'>
+                    {% csrf_token %}
+
+
+                    <div id="login_field">
+                        <div id="login_mail">
+
+
+                            <div class="input login_input_box">
+
+                                <i class="change fas fa-mobile"></i>
+                                <input type="number" name="Phone" id="Phone" placeholder="رقم الهاتف" required>
+                            </div>
+
+                            <div class="input login_input_box">
+                                <i class="fas fa-key"></i>
+                                <input type="password" name="password_login" id="password" placeholder="كلمه السر" required>
+                            </div>
+
+                        </div>
+                        <div id="login_btn">
+                            <div class="field_btn">
+                                <button type='submit' class='next '>إرسال</button>
+                            </div>
+                            <p>Don't have an account?
+                                <a href="/signup_indi"><span id='link'> Signup Here</span></a>
+                            </p>
+                        </div>
+
+
+
+
+                </form>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+        <script>
+            mapboxgl.accessToken = 'pk.eyJ1IjoibW9heWFkOGFsdGFtaW1pIiwiYSI6ImNrYzBpNWVhajFjM3IyeGxqN3FvdDdnc3UifQ.xeup9kW6ihZWlBvg-pnvWg';
+            var map = new mapboxgl.Map({
+                container: 'form_body',
+                style: 'mapbox://styles/mapbox/dark-v10', // stylesheet location
+                center: [45, 24], // starting position [lng, lat]
+                zoom: 7 // starting zoom
+            });
+        </script>
+        <script src="{% static 'redirect.js' %}"></script>
+</body>
+
+</html>

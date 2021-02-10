@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">{% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'verify.css' %}">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+    <title>Phone verify</title>
+</head>
+
+<body>
+    {% if messages %}
+    <div id="message">
+        {% for message in messages %}
+        <p id='message_itself'>{{ message }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <div id="container">
+        <form action="/Phone_verify_firm" method="post" id='form'>
+            {% csrf_token %}
+            <div class="page">
+
+
+                <div class="field">
+                    <div id="verify">
+                        <div class="heading">
+                            <span>عملية التحقق</span>
+                        </div>
+                        <div class="step">
+                            <div class="bullets">
+
+                                <i class="fas fa-check"></i>
+                            </div>
+
+                        </div>
+                        <div class="done_text">
+                            <span>يتم إرسال رمز سري إلى هاتفك.
+                                <br> يرجى ادخال.</span>
+                        </div>
+                        <div class="code_group">
+                            <input type="text" class="form-control" id='first' name='first' maxlength="1" placeholder="0">
+                            <input type="text" class="form-control" id='second' name='second' maxlength="1" placeholder="0">
+                            <input type="text" class="form-control" id='third' name='third' maxlength="1" placeholder="0">
+                            <input type="text" class="form-control" id='fourth' name='fourth' maxlength="1" placeholder="0">
+                        </div>
+
+
+                        <div class="field_btn">
+
+
+                            <button type="submit" class='submit next'>إرسال</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoibW9heWFkOGFsdGFtaW1pIiwiYSI6ImNrYzBpNWVhajFjM3IyeGxqN3FvdDdnc3UifQ.xeup9kW6ihZWlBvg-pnvWg';
+        var map = new mapboxgl.Map({
+            container: 'container',
+            style: 'mapbox://styles/mapbox/dark-v10', // stylesheet location
+            center: [45, 24], // starting position [lng, lat]
+            zoom: 7 // starting zoom
+        });
+    </script>
+    <script src="{% static 'verify.js' %}"></script>
+
+</body>
+
+</html>

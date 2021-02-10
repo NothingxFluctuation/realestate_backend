@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">{% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'form.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" integrity="sha512-Cv93isQdFwaKBV+Z4X8kaVBYWHST58Xb/jVOcV9aRsGSArZsgAnFIhMpDoMDcFNoUtday1hdjn0nGp3+KZyyFw==" crossorigin="anonymous" />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <title>Sign Up</title>
+</head>
+
+<body>
+    {% if messages %}
+    <div id="message">
+        {% for message in messages %}
+        <p id='message_itself'>{{ message }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <div class="error">Please fill Out All Fields</div>
+    <div class="number_error">Number should not contain dashes</div>
+    <div class="file_error">Please Upload CR Number in PDF Format</div>
+
+    <div id="form_body">
+
+        <div id="container">
+            <header>سجل
+            </header>
+            <div class="progress-bar">
+                <div class="step">
+                    <div class="bullets">
+
+                        <span> <i class="fas fa-user"></i></span>
+                    </div>
+                    <p>شخصي</p>
+                    <div class="check fas fa-check"></div>
+
+                </div>
+                <div class="step">
+                    <div class="bullets">
+                        <span><i class="fas fa-lock"></i></span>
+                    </div>
+                    <p>الحساب</p>
+                    <div class="check fas fa-check"></div>
+                </div>
+                <div class="step">
+                    <div class="bullets">
+                        <span><i class="fas fa-phone-alt"></i></span>
+                    </div>
+                    <p>هاتف</p>
+                    <div class="check fas fa-check"></div>
+                </div>
+                <!-- <div class="step">
+                    <div class="bullets">
+                        <span><i class="fas fa-check-circle"></i></span>
+                    </div>
+                    <p>التأكيد</p>
+                    <div class="check fas fa-check"></div>
+                </div> -->
+            </div>
+            <div id="form_outer">
+
+                <form action="/signup_firm" method="post" id='form_sign' enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="page slidepage">
+
+
+                        <div class="field">
+                            <div id="names">
+                                <div class="input">
+
+                                    <input type="text" name="Last" id="Last" placeholder="الكنية" required>
+                                    <i class="far fa-user"></i>
+                                </div>
+                                <div class="input">
+
+
+                                    <input type="text" name="First" id="First" placeholder="الاسم الاول" required>
+                                    <i class="far fa-user"></i>
+                                </div>
+                            </div>
+                            <div id="company">
+                                <div class="input">
+
+                                    <input type="text" name="Company" id="Company" placeholder=" الكنية" required>
+                                    <i class="far fa-building"></i>
+                                </div>
+                                <div class="input">
+                                    <label class="file">
+                                    <input type="file" name="Cr"  class="Input_self" aria-label="File browser example"  id='Cr' required >
+                                    <span class="file-custom" id='holder'></span>
+                                        </label>
+                                    <div id="file-upload-filename"></div>
+                                    <!-- <input type="number" name="CR" id="CR" placeholder="الكنية"> -->
+                                    <!-- <i class="fas fa-file-invoice"></i> -->
+                                </div>
+                            </div>
+                            <div id="image">
+                                <div class="input" id='ch'>
+                                    <label class="file">
+                                        <input type="file" name="profile"  class="Input_self" aria-label="File browser example" id='profile'>
+                                        <span class="file-custom"></span>
+                                    </label>
+                                    <div id="file-upload"></div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button">
+                            <div class="field_btn">
+                                <button class='next firbtn' type='button'>التالى</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page">
+
+
+                        <div class="field">
+                            <div id="mail">
+
+                                <div class="input">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" name="Email" id="Email" placeholder="البريد الإلكتروني" required>
+                                </div>
+                                <div class="input">
+                                    <i class="fas fa-key"></i>
+                                    <input type="password" name="password" id="password" placeholder="كلمه السر" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field_btn">
+
+                            <button class='next-1 next' type='button'>التالى</button>
+                            <button class='prev-1 next' type='button'>السابق</button>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="page">
+
+
+                        <div class="field">
+                            <div id="num">
+
+                                <div class="input">
+                                    <span class="flag-icon flag-icon-sa"></span>
+                                    <div id="country_code">+966</div>
+                                </div>
+                                <div class="input">
+                                    <i class="fas fa-mobile"></i>
+                                    <input type="tel" name="number" id="numer" maxlength="9" placeholder="رقم الهاتف" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field_btn">
+
+
+                            <button type='submit' class='submit next'>إرسال</button>
+                            <button class='prev-2 next' type='button'>السابق</button>
+                        </div>
+                    </div>
+
+                    <!-- 
+                    <div class="page">
+
+
+                        <div class="field">
+                            <div id="verify">
+
+                                <div class="done_text">
+                                    <a href="#" class="don_icon"><i class="ion-android-done"></i></a>
+                                    <h1>يتم إرسال رمز سري إلى هاتفك.
+                                        <br> <br> يرجى ادخال.</h1>
+                                </div>
+                                <div class="code_group">
+                                    <input type="text" class="form-control" id='first' placeholder="0">
+                                    <input type="text" class="form-control" id='second' placeholder="0">
+                                    <input type="text" class="form-control" id='third' placeholder="0">
+                                    <input type="text" class="form-control" id='fourth' placeholder="0">
+                                </div>
+
+
+                                <div class="field_btn">
+
+
+                                    <button type='submit' class='submit next'>إرسال</button>
+                                    <button type='button' class='prev-3 next'>السابق</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div> -->
+
+
+
+                </form>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoibW9heWFkOGFsdGFtaW1pIiwiYSI6ImNrYzBpNWVhajFjM3IyeGxqN3FvdDdnc3UifQ.xeup9kW6ihZWlBvg-pnvWg';
+        var map = new mapboxgl.Map({
+            container: 'form_body',
+            style: 'mapbox://styles/mapbox/dark-v10', // stylesheet location
+            center: [45, 24], // starting position [lng, lat]
+            zoom: 7 // starting zoom
+        });
+    </script>
+    <script src="{% static 'form.js' %}"></script>
+</body>
+
+</html>

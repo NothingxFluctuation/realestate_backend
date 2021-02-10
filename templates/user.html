@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
+    <title>User Profile</title>
+</head>
+
+<body>
+
+    <div id="back">
+        <a href="/">
+
+            العودة إلى الخريطة
+        </a>
+    </div>
+    <div id="back_log">
+        <a href="/logout">
+
+            تسجيل خروج
+        </a>
+    </div>
+    <div id="user_container">
+        <div id="all_info">
+            <div id="user_profile">
+                <div id="icon">
+                    <div id="icon_over">
+                        {% if request.user.firm.profile.url == null or request.user.firm.profile.url == '' or request.user.firm.profile.url == 'unknown' or request.user.firm.profile.url == '(unknown)' %}
+
+                        <img src="{{ request.user.individual.profile.url}}" alt=""> {% else %}
+                        <img src="{{ request.user.firm.profile.url}}" alt=""> {% endif %}
+
+                    </div>
+                </div>
+                <div id="basic_info">
+
+                    <div id="info">
+                        <h2>{{ request.user.first_name}} {{ request.user.last_name}}</h2>
+                        {% if request.user.firm.profile.url == null or request.user.firm.profile.url == '' or request.user.firm.profile.url == 'unknown' or request.user.firm.profile.url == '(unknown)' %}
+                        <h3 id="type">فرد</h3>
+                        {% else %}
+                        <h1 id="name">{{ request.user.firm.Company_name}}</h1>
+                        {% endif %}
+                    </div>
+                </div>
+                <div id="add_info">
+
+                    {{ request.user.username}}<br><br> {% if request.user.firm.profile.url != null or request.user.firm.profile.url != '' or request.user.firm.profile.url != 'unknown' or request.user.firm.profile.url != '(unknown)' %} {{ request.user.email}}
+                    {% endif %}
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoibW9heWFkOGFsdGFtaW1pIiwiYSI6ImNrYzBpNWVhajFjM3IyeGxqN3FvdDdnc3UifQ.xeup9kW6ihZWlBvg-pnvWg';
+        var map = new mapboxgl.Map({
+            container: 'user_container',
+            style: 'mapbox://styles/mapbox/dark-v10', // stylesheet location
+            center: [45, 24], // starting position [lng, lat]
+            zoom: 7 // starting zoom
+        });
+    </script>
+    <script src="{% static 'index.js' %}"></script>
+</body>
+
+</html>.

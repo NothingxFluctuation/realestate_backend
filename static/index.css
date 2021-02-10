@@ -1,0 +1,482 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri&display=swap');
+body {
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    font-family: 'Amiri', serif;
+    position: relative;
+    overflow-x: hidden;
+}
+
+#map {
+    width: 100vw;
+    height: 100vh;
+}
+
+#search {
+    width: 20vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 2;
+    margin: auto 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#input {
+    background: white;
+    width: 20vw;
+    height: 70vh;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#fin {
+    width: 18vw;
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#fin input[type='text'] {
+    align-self: center;
+}
+
+#fin label {
+    align-self: flex-end;
+    font-size: 25px;
+    padding: 0 1.5vw 0 0;
+}
+
+input[type='text'] {
+    border: solid 1px black;
+    border-radius: 10px;
+    width: 17vw;
+    height: 5vh;
+}
+
+input[type='text']:focus {
+    outline: none;
+    border-radius: 10px;
+    border: solid 2px rgb(16, 131, 240);
+}
+
+#Select_all {
+    background: #000;
+    margin: 0 0 0 0.4vw;
+    margin-bottom: 0%;
+    font-size: 25px;
+    padding-bottom: 0%;
+    transition: all .35s cubic-bezier(.2, 1, .3, 1);
+}
+
+#Select_all:hover {
+    background: #50792d;
+    color: #fff;
+}
+
+#submit {
+    width: 20vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+input[type='button'],
+input[type='submit'] {
+    border: none;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    width: 7vw;
+    height: 6vh;
+    outline: none;
+}
+
+select {
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+}
+
+select:focus {
+    outline: none;
+}
+
+#submit input:nth-child(1) {
+    background: #50792d;
+}
+
+#submit input:nth-child(2) {
+    background: #811309;
+}
+
+#user_container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#type {
+    font-size: 15px;
+}
+
+#back {
+    padding: 9px;
+    background: #50792d;
+    position: absolute;
+    top: 40px;
+    left: 15px;
+    z-index: 100;
+    color: white;
+    border-radius: 5px;
+}
+
+#back_log {
+    padding: 9px;
+    background: #811309;
+    position: absolute;
+    top: 40px;
+    right: 15px;
+    z-index: 100;
+    color: white;
+    border-radius: 5px;
+}
+
+#back_log a,
+#back a {
+    color: #fff;
+}
+
+#all_info {
+    height: 100vh;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    z-index: 10;
+}
+
+#user_profile {
+    background-color: rgba(48, 48, 48, 1);
+    width: 700px;
+    height: 350px;
+    position: relative;
+    color: #ccc;
+    /* border: 1px solid #ccc; */
+}
+
+#icon {
+    width: 180px;
+    height: 180px;
+    /* background-color: aquamarine; */
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    border-radius: 50%;
+}
+
+#icon_over {
+    width: 180px;
+    height: 180px;
+    background-color: #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#icon_over img {
+    width: 180px;
+    height: auto;
+    overflow: hidden;
+    position: absolute;
+    z-index: 99;
+}
+
+#basic_info {
+    /* background-color: blanchedalmond; */
+    width: 100%;
+    height: 150px;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border-bottom: solid 1px #d3d3d3;
+}
+
+#info {
+    text-align: center;
+}
+
+#add_info {
+    /* background-color: snow; */
+    width: 100%;
+    /* height: 100px; */
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 20px;
+}
+
+
+/* Button account */
+
+#user_account {
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    z-index: 99;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+#user_account i {
+    position: relative;
+    font-size: 25px;
+}
+
+.account_button {
+    background-color: #fff;
+    outline: none;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: all .35s cubic-bezier(.2, 1, .3, 1);
+}
+
+.account_button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+#message {
+    width: 40vw;
+    position: absolute;
+    z-index: 100;
+    margin: 10px 30% 0 30%;
+    padding: 2.5px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #000;
+    background-color: rgb(184, 255, 200);
+    border-color: #c3e6cb;
+    text-align: center;
+    transition: 0.5s ease-in-out;
+    border-radius: 8px;
+}
+
+#message_itself {
+    padding: 0;
+    margin: 0;
+}
+
+
+/* PopUp  */
+
+
+/*PopUp starts*/
+
+.mod-bg {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+}
+
+.active {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+#modal {
+    background-color: rgba(48, 48, 48, 0.7);
+    width: 350px;
+    height: 400px;
+    padding: 20px 20px;
+    border-radius: 3%;
+    overflow: hidden;
+    position: relative;
+}
+
+#modal_form {
+    width: 100%;
+    height: 100%;
+}
+
+#header_modal {
+    width: 100%;
+    height: 50%;
+}
+
+#icon_modal {
+    width: 100%;
+    height: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#icon_box {
+    width: 80px;
+    height: 80px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+
+#header_text {
+    width: 100%;
+    height: 25%;
+    text-align: center;
+    color: #fff;
+}
+
+#header_text p {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+}
+
+#footer_modal {
+    width: 100%;
+    height: 50%;
+}
+
+#footer_text {
+    width: 100%;
+    height: 20%;
+    text-align: center;
+}
+
+.hr-text {
+    line-height: 1em;
+    position: relative;
+    outline: 0;
+    border: 0;
+    color: black;
+    text-align: center;
+    height: 1.5em;
+    opacity: .5;
+}
+
+.hr-text:before {
+    content: '';
+    background-color: #ccc;
+    /* background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(#818078), to(transparent)); */
+    /* background: linear-gradient(to right, transparent, #818078, transparent); */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+}
+
+.hr-text:after {
+    content: attr(data-content);
+    position: relative;
+    display: inline-block;
+    color: black;
+    padding: 0 .5em;
+    line-height: 1.5em;
+    color: #ccc;
+    background-color: #484848;
+}
+
+#footer_btn {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_red {
+    width: 120px;
+    height: 100px;
+    border: 1px solid #ccc;
+    color: #ccc;
+    margin: 5px;
+    transition: all .35s cubic-bezier(.2, 1, .3, 1);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login_red i {
+    font-size: 25px;
+    margin: 10px;
+}
+
+.login_red:hover {
+    color: #484848;
+    background-color: #ccc;
+}
+
+.mod-close {
+    font-family: sans-serif;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#map_change {
+    position: absolute;
+    top: 80px;
+    right: 15px;
+    /* padding: 10px; */
+    z-index: 1000;
+    font-size: 20px;
+    transition: all .35s cubic-bezier(.2, 1, .3, 1);
+    background-image: url("/static/satellite..jpg");
+    color: #000;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#map_change:hover {
+    font-size: 25px;
+    cursor: pointer;
+}

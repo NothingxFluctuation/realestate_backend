@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> {% load static %}
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+    <!-- <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="stylesheet" href="{% static 'css/hover.css' %}" media="all"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Changa&display=swap">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}"> 
+    <script src="{% static 'js/vendor/modernizr-2.8.3.min.js' %}"></script>
+    
+    <!-- >> Definition Element Html5  -->  
+    <!-- >> Processing Problems Media Query In IE -->
+    <!--[if lt IE 9]>
+    <script src="{% static 'js/vendor/html5shiv.min.js' %}"></script>                           
+    <script src="{% static 'js/vendor/respond.min.js' %}"></script>                             
+    <![endif]--> 
+
+    <title>Home</title>
+</head>
+
+<body>
+    {% if messages %}
+    <div id="message">
+        {% for message in messages %}
+        <p{% if message.tags %} class="{{ message.tags }}" {% endif %} id='message_itself'>{{ message }} <i class="fas fa-check-circle"></i></p>
+
+            {% endfor %}
+    </div>
+    {% endif %}
+    
+    <div class="mod-bg">
+
+        <div id="modal">
+            <form id='modal_form'>
+                <div id="header_modal">
+                    <div id="icon_modal">
+                        <div id="icon_box">
+
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                    <div id="header_text">
+                        <p> تسجيل الدخول</p>
+
+                    </div>
+                </div>
+                <div id="footer_modal">
+                    <div id="footer_text">
+                        <hr class="hr-text" data-content="اختر الوسيلة المناسبة">
+
+                    </div>
+                    <div id="footer_btn">
+                        <div class="login_red">
+                            <i class="fas fa-building"></i>
+                            <span>المنشأة</span>
+                        </div>
+
+                        <div class="login_red">
+                            <i class="fas fa-user"></i>
+                            <span>فرد</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div id="button_modal">
+                    <span class='mod-close'>X</span>
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+<header class="header">
+    <nav class="menu">
+        <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
+        <label class="menu-open-button" for="menu-open">
+            <span class="hamburger hamburger-1"></span>
+            <span class="hamburger hamburger-2"></span>
+            <span class="hamburger hamburger-3"></span>
+        </label>
+
+        <a href="#" class="menu-item showbox" data-box="home">  <i class="fas fa-home"></i>    </i> </a>
+
+        {% if user.is_authenticated %}
+        <a href="/user" class="menu-item showbox" data-box="subscribe">  <i class="fas fa-users"></i> </a>
+        {% else %}
+        <a href="#" class="menu-item showbox" data-box="subscribe">  <i class="fas fa-users"></i> </a>
+        {% endif %}
+
+        <a href="#" class="menu-item showbox"> <!-- data-box="night-modeBox" -->
+            <div class="btn-night" id="night-mode">  
+                <label class="switch"> 
+                    <div class="switch-button"></div>            
+                </label>                                             
+            </div>
+            </a>
+        <a href="#" class="menu-item showbox" data-box="location"> <i class="fas fa-search-location"></i> </a>
+        <a href="#" class="menu-item showbox" data-box='contact'> <i class="fas fa-sign"></i>  </a>
+        <a href="#" class="menu-item showbox" data-box='contact2'> <i class="fas fa-key"></i> </a>
+    </nav>
+
+</header>
+
+
+        <div class="overlay"></div>
+
+
+
+
+        
+        <!-- Start Boxes  subscribe -->
+        <div class="container container-boxes   box subscribe  ">
+            <!-- <i class="fas fa-times close-box"></i> -->
+            <div class="content-boxes">
+                <div class="icon text-center">
+                    <i class="far fa-user-circle"></i>
+                </div>
+                <div class="text-center">
+                    <h3 class="mb-3"> تسجيل  الدخول  </h3>
+                    <div class="line">
+                        <span>  اختر الوسيلة  المناسبة  </span>
+                    </div>
+                    <div class="link mt-5 mb-5">
+                        <a href="/login_indi"   class="d-inline-block   showbox  hvr-bounce-out" data-box="login-individual"> <i class="fa fa-user"> 
+                            </i> <span class="d-block">فرد  </span> 
+                        </a>
+                        <a href="/login"  class="d-inline-block   showbox  hvr-bounce-out" data-box="login-company"> 
+                            <i class="fas fa-building"></i> <span  class="d-block">  المنشأة  </span> 
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Boxes  subscribe -->
+
+       <!-- Start Boxes  services -->
+        <div class="container  container-boxes    box location ">
+            <!-- <i class="fas fa-times close-box"></i> -->
+          
+                    <form id="subscribe-form" class=" row" method="post" novalidate="true" action="" autocomplete="off">
+                        
+                        <div class="col-md-12">
+                            <input type="text" name="District" id="District" list='Dis_list' placeholder="الحي ">
+                            <datalist id='Dis_list'></datalist>
+                        </div>   
+                        <div class="col-md-12">
+                            <input type="text"   name="Plan" id="Plan" list='Scheme_list' placeholder="المخطط">
+                            <datalist id='Scheme_list'></datalist>
+                        </div>  
+                        <div class="col-md-12">
+                            <input type="text" name="Block" id="Block" list='Block_list' placeholder="البلوك">
+                            <datalist id='Block_list'></datalist>
+                        </div> 
+                        <div class="col-md-12">
+                            <input type="text" name="Parcel" id="Parcel" list='Parcel_list' placeholder="القطعة">
+                            <datalist id='Parcel_list'></datalist>
+                        </div>             
+                             
+                         <div class="col-md-12" style="text-align: left;">                          
+                            <button type="submit" id="subscribe-submit" class="btn btn-inverse">
+                               <i class="fas fa-search"></i> <span> البحث  </span> 
+                            </button>
+                        </div>    
+                        
+                    </form> 
+              
+        </div>
+        <!-- End Boxes  services -->
+ 
+        
+       <!-- Start Boxes  contact -->
+        <div class="container  container-boxes   box contact  ">
+            <div class="row">
+                <div class="col-md-6">
+                     // Here Code Contact
+                </div>
+                <div class="col-md-6">
+                    <p>
+                        Join our email newsletter. It's fast and easy.
+                        You will be among the first to know about
+                        the launch of our project.       
+                        Don't forget to click on the confirmation email that you will receive in order to activate your subscription.
+
+                        Enter Your Email Address
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- End Boxes  services -->        
+        
+       <!-- Start Boxes  contact2 -->
+        <div class="container  container-boxes   box contact2  ">
+            <div class="row">
+                <div class="col-md-6">
+                     // Here Code Contact2
+                </div>
+                <div class="col-md-6">
+                    <p>
+                        Join our email newsletter. It's fast and easy.
+                        You will be among the first to know about
+                        the launch of our project.       
+                        Don't forget to click on the confirmation email that you will receive in order to activate your subscription.
+
+                        Enter Your Email Address
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- End Boxes  services --> 
+
+
+
+    <div id="account">
+
+    </div>
+
+
+
+    <div id='map'></div>
+    <script>
+        let url = "{% static 'data.geojson'%}"
+        let Satellite = "{% static 'satellite.jpg' %}"
+        let dark_i = "{% static 'dark.jpg' %}"
+    </script>
+    <script src="{% static 'map.js' %}">
+    </script>
+    <script src="{% static 'index.js' %}"></script>
+
+    <script src="{% static 'js/vendor/jquery-1.12.0.min.js' %}"></script>  <!-- >> This Libaray jQuery-->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>   
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.1/knockout-min.js"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>                  
+    <script src="{% static 'js/main.js' %}"></script> 
+</body>
+
+</html>
