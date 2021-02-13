@@ -7,7 +7,7 @@ var map = new mapboxgl.Map({
 });
 
 
-let changing = document.getElementById('map_change');
+let changing = document.getElementById('trigger_change');
 var nightMode = document.querySelector('#night-mode');
 let dark = true;
 
@@ -70,12 +70,14 @@ nightMode.addEventListener('click', e => {
 
 changing.addEventListener('click', e => {
 
+    
+
     if (dark == true) {
 
         map.setStyle('mapbox://styles/mapbox/streets-v11');
         console.log(Satellite);
         changing.style.backgroundImage = "url('/static/v10.jpg')";
-        changing.style.color = "#fff";
+        changing.style.color = "#99cc34";
         dark = false;
         if (localStorage.getItem('source_box') != null || localStorage.getItem('source_Layer') != null) {
             let source_box = localStorage.getItem('source_box');
@@ -91,7 +93,7 @@ changing.addEventListener('click', e => {
 
         map.setStyle('mapbox://styles/moayad8altamimi/ckcijutu90b231inzpk1sht64');
         changing.style.backgroundImage = "url('/static/satellite..jpg')";
-        changing.style.color = "#000";
+        changing.style.color = "#99cc34";
         dark = true;
         if (localStorage.getItem('source_box') != null || localStorage.getItem('source_Layer') != null) {
             let source_box = localStorage.getItem('source_box');
@@ -247,6 +249,7 @@ fetch(url).then(response => response.json()).then(data => {
 
 
         })
+        console.log("Dis_all");
         console.log(Dis_all);
         District.addEventListener('change', function() {
             Plan_all = [];
