@@ -143,10 +143,10 @@
                         <span>  اختر الوسيلة  المناسبة  </span>
                     </div>
                     <div class="link mt-5 mb-5">
-                        <a href="/login_indi"   class="d-inline-block   showbox  hvr-bounce-out" data-box="login-individual"> <i class="fa fa-user"> 
+                        <a href="#"   class="d-inline-block   showbox  hvr-bounce-out" data-box="login-individual"> <i class="fa fa-user"> 
                             </i> <span class="d-block">فرد  </span> 
                         </a>
-                        <a href="/login"  class="d-inline-block   showbox  hvr-bounce-out" data-box="login-company"> 
+                        <a href="#"  class="d-inline-block   showbox  hvr-bounce-out" data-box="login-company"> 
                             <i class="fas fa-building"></i> <span  class="d-block">  المنشأة  </span> 
                         </a>
                     </div>
@@ -239,6 +239,507 @@
 
 
     <div id='map'></div>
+
+            <!-- Start Boxes  login individual -->
+
+        <div class="container container-boxes    box login-individual  ">
+            <!-- <i class="fas fa-times close-box"></i> -->
+            <h3 class="mt-3 text-center mb-5"> تسجيل الدخول  </h3>
+            <form class="form-horizontal"  >
+                <div class="row">
+                    <div class="col-md-12" style="margin: auto;">
+                        <div class="form-group input-with-icon">
+                            <div class="icon-box">
+                                <!-- <i class="fa fa-phone icon-input"></i> -->
+                            </div>
+                            <div class="field">
+                            <input 
+                                id="name" 
+                                name="frist" 
+                                type="number" 
+                                class="" 
+                                placeholder="   "   >
+                                <label for="">رقم الهاتف</label>
+                            </div>    
+                        </div>
+                    </div> 
+                    <div class="col-md-12" style="margin: auto;">
+                        <div class="form-group  input-with-icon">
+                            <div class="icon-box">
+                                <!-- <i class="fa fa-lock icon-input"></i> -->
+                            </div>
+                            <div class="field">
+                            <input 
+                                id="last" 
+                                name="lastname" 
+                                type="password" 
+                                class="" 
+                                placeholder="   "  >
+                                <label>كلمة السر </label>
+                            </div>    
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <button type="submit"  class="btn">ارسال</button>
+
+                        <h6 class="mt-2" style="font-size:17px">
+                            لا تمتلك  حساب 
+                            <a href="#" class="    showbox" data-box="register-individual"> اضغط  هنا  </a>
+                            لتسجيل حساب جديد
+                        </h6>
+                    </div> 
+                </div>
+            </form>
+        </div>
+        <!-- End Boxes  Login individual -->  
+
+        <!-- Start Boxes  login Company -->
+        <div class="container container-boxes   box login-company  ">
+            <!-- <i class="fas fa-times close-box"></i> -->
+            <h3 class="mt-3 text-center mb-5"> تسجيل الدخول   المنشأة</h3>
+            <form class="form-horizontal">
+                <div class="row">
+                    <div class="col-md-12" style="margin: auto;">
+                        <div class="form-group input-with-icon">
+                            <div class="icon-box">
+                                <!-- <i class="fa fa-phone icon-input"></i> -->
+                            </div>
+                            <div class="field">
+                            <input 
+                                id="name" 
+                                name="frist" 
+                                type="email" 
+                                class="" 
+                                placeholder="    "   >
+                                <label>البريد الالكترونى</label>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12" style="margin: auto;">
+                        <div class="form-group  input-with-icon">
+                            <div class="icon-box">
+                                <!-- <i class="fa fa-lock icon-input"></i> -->
+                            </div>
+                            <div class="field">
+                            <input 
+                                id="last" 
+                                name="lastname" 
+                                type="password" 
+                                class="" 
+                                placeholder="    "  >
+                                <label> كلمة السر  </label>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <button type="submit"  class="btn">ارسال</button>
+
+                        <h6 class="mt-2" style="font-size:17px">
+                            لا تمتلك  حساب 
+                            <a href="#" class="    showbox" data-box="register-company"> اضغط  هنا  </a>
+                            لتسجيل حساب جديد
+                        </h6>
+                    </div> 
+                </div>
+            </form>
+        </div>
+        <!-- End Boxes  Login Company -->  
+
+        <!-- Start Boxes  register individual -->
+        <div class="container container-boxes   box register-individual ">
+            <!-- <i class="fas fa-times close-box"></i> -->
+            <div id="wrapper">
+                <div id="">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                            <span class="sr-only">0% Complete</span>
+                        </div>
+                    </div>
+                    <form class="form-horizontal msf">
+                        <div class="msf-header">
+                            <div class="row text-center">
+                                <div class="msf-step col-4">
+                                        <i class="fa fa-user"></i> <span> البيانات الشخصية </span>
+                                    </div>
+                                <div class="msf-step col-4">
+                                        <i class="fa fa-lock"></i><span> بيانات الحساب </span>
+                                    </div>
+                                <div class="msf-step col-4">
+                                        <i class="fa fa-phone"></i> <span>الهاتف </span>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                        <div class="msf-content">
+                            <div class="msf-view">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="avatar-upload uploadImage">
+                                            <div class="avatar-edit">
+                                                <input type="file" id="imageUpload" accept=".png, .jpg, .jpeg" name="thumbnail">
+                                                <label for="imageUpload"></label>
+                                            </div>
+                                            <div class="avatar-preview">
+                                                <div id="imagePreview" style="background-image: url('{% static 'img/uploadeImage.png' %}')">
+                                                </div>
+                                            </div>
+                                            <h5 class="mt-1" style="line-height: 1;font-size: 16px">  
+                                                الصورة الشخصية
+                                            </h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" style="margin: auto;">
+                                        <div class="form-group">
+                                            <div class="icon-box">
+                                                <!-- <i class="fa fa-user icon-input"></i> -->
+                                            </div>
+                                            <div class="field">
+                                            <input 
+                                                id="name" 
+                                                name="frist" 
+                                                type="text" 
+                                                class="" 
+                                                placeholder="   "   data-bind='value: FirstName' 
+                                                data-val="true" 
+                                                data-val-required="name is required"> 
+                                                <label for="fullname"> الاسم الأول </label>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" style="margin: auto;">
+                                        <div class="form-group">
+                                            <div class="icon-box">
+                                                <!-- <i class="fa fa-user icon-input"></i> -->
+                                            </div>
+                                            <div class="field">
+                                            <input 
+                                                id="last" 
+                                                name="lastname" 
+                                                type="text" 
+                                                class="" 
+                                                placeholder=" " 
+                                                data-bind="value: LastName" 
+                                                data-val="true" 
+                                                data-val-required="name is required">
+                                                <label for="   ">  الإسم الأخير  </label>
+                                                </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="msf-view">
+                                <div class="row">
+                                    <div class="col-md-6" style="margin: auto;">
+                                        <div class="form-group">
+                                            <div class="icon-box">
+                                                <!-- <i class="fas fa-envelope-open icon-input"></i> -->
+                                            </div>
+                                            <div class="field">
+                                            <input 
+                                                id="last" 
+                                                name="email" 
+                                                type="email" 
+                                                class="" 
+                                                placeholder=" " 
+                                                data-bind="value: Email" 
+                                                data-val="true" 
+                                                data-val-required="name is required">
+                                                <label for="">  البريد الالكترونى </label>
+                                                </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" style="margin: auto;">
+                                        <div class="form-group">
+                                            <div class="icon-box">
+                                                <!-- <i class="fa fa-lock icon-input"></i> -->
+                                            </div>
+                                            <div class="field">
+                                            <input 
+                                                id="name" 
+                                                name="name" 
+                                                type="password" 
+                                                class="" 
+                                                placeholder=" " 
+                                                data-bind="value: Password" 
+                                                data-val="true" 
+                                                data-val-required="name is required">
+                                                <label for=""> كلمة السر </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="msf-view">
+                                <div class="row">
+                                    <div class="col-md-7" style="margin: auto;">
+                                        <div class="form-group phone-number">
+                                            
+                                            <div class="field"> 
+                                            <input 
+                                                dir='ltr'
+                                                id="name" 
+                                                name="name" 
+                                                type="number" 
+                                                class="" 
+                                                placeholder="   " 
+                                                data-bind="value: Phone" 
+                                                data-val="true" 
+                                                data-val-required="name is required">
+                                                <label for="">   رقم الهاتف  </label>
+                                                <div class="code">
+                                                    <span class="d-inline-block" dir="ltr">+966</span>
+                                                    <img src="{% static 'img/saudi-arabia.png' %}">
+                                                </div>
+                                               
+                                                </div>
+                                        </div>
+                                    </div>
+                                    
+                            
+                                </div>
+                            </div>
+
+                            
+                        </div>
+
+
+                        <div class="msf-navigation">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <button type="button" data-type="back" class="btn msf-nav-button"><i class="fa fa-chevron-right"></i> السابق  </button>
+                                </div>
+
+                                <div class="col-md-6 ">
+                                    <button type="button" data-type="next" class="btn msf-nav-button"> التالي   <i class="fa fa-chevron-left"></i></button>
+                                    <button type="submit" data-type="submit" class="btn msf-nav-button">ارسال</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <!-- End Boxes  register individual -->       
+
+        <!-- Start Boxes  register Company -->
+        <div class="container container-boxes   box register-company  ">
+            <!-- <i class="fas fa-times close-box"></i> -->
+            
+            <div id="wrapper">
+                <div id="">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                            <span class="sr-only">0% Complete</span>
+                        </div>
+                    </div>
+                    <form class="form-horizontal msf2">
+                        <div class="msf-header">
+                            <div class="row text-center">
+                                <div class="msf-step col-4">
+                                    <i class="fa fa-user"></i> <span>    
+                                    بيانات الشركة  </span>
+                                </div>
+                                <div class="msf-step col-4">
+                                    <i class="fa fa-lock"></i><span> بيانات الحساب </span>
+                                </div>
+                                <div class="msf-step col-4">
+                                    <i class="fa fa-phone"></i> <span>الهاتف </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="msf-content">
+                            <div class="msf-view">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="avatar-upload uploadImage">
+                                            <div class="avatar-edit">
+                                                <input type="file" id="imageUpload" accept=".png, .jpg, .jpeg" name="thumbnail">
+                                                <label for="imageUpload"></label>
+                                            </div>
+                                            <div class="avatar-preview">
+                                                <div id="imagePreview" style="background-image: url('{% static 'img/uploadeImage.png' %}')">
+                                                </div>
+                                            </div>
+                                            <h5 class="mt-1" style="line-height: 1;font-size: 16px">  
+                                                صورة المنشأة
+                                            </h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" style="margin: auto;">
+                                        <div class="form-group">
+                                            <div class="icon-box">
+                                                <!-- <i class="fa fa-user icon-input"></i> -->
+                                            </div>
+                                           <div class="field"> 
+                                            <input 
+                                                id="name" 
+                                                name="frist" 
+                                                type="text" 
+                                                class="" 
+                                                placeholder=" "   data-bind='value: FirstNameC' 
+                                                data-val="true" 
+                                                data-val-required="name is required">
+                                                <label for="">  الإسم الأول   </label>
+                                                </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" style="margin: auto;">
+                                        <div class="form-group">
+                                            <div class="icon-box">
+                                                <!-- <i class="fa fa-user icon-input"></i> -->
+                                            </div>
+                                            <div class="field"> 
+                                            <input 
+                                                id="last" 
+                                                name="lastname" 
+                                                type="text" 
+                                                class="" 
+                                                placeholder=" " 
+                                                data-bind="value: LastNameC" 
+                                                data-val="true" 
+                                                data-val-required="name is required">
+                                                <label for="">الإسم الأخير  </label>
+                                                </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" style="margin: auto;">
+                                        <div class="form-group">
+                                            <div class="icon-box">
+                                                <!-- <i class="fa fa-user icon-input"></i> -->
+                                            </div>
+                                            <input 
+                                                id="last" 
+                                                name="file" 
+                                                type="file" 
+                                                class="fileplace" 
+                                                placeholder=" رافاق الملف " 
+                                                data-bind="value: file" 
+                                                data-val="true" 
+                                                data-val-required="name is required">
+                                                
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" style="margin: auto;">
+                                        <div class="form-group">
+                                            <div class="icon-box">
+                                                <!-- <i class="fa fa-user icon-input"></i> -->
+                                            </div>
+                                            <div class="field">
+                                            <input 
+                                                id="last" 
+                                                name="lastname" 
+                                                type="text" 
+                                                class="" 
+                                                placeholder="   " 
+                                                data-bind="value: NameCompany" 
+                                                data-val="true" 
+                                                data-val-required="name is required">
+                                                <label for="">    اسم   الشركة المسجل </label>
+                                                </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="msf-view">
+                                <div class="row">
+                                    <div class="col-md-6" style="margin: auto;">
+                                        <div class="form-group">
+                                            <div class="icon-box">
+                                                <!-- <i class="fas fa-envelope-open icon-input"></i> -->
+                                            </div>
+                                            <div class="field"> 
+                                            <input 
+                                                id="last" 
+                                                name="email" 
+                                                type="email" 
+                                                class="" 
+                                                placeholder=" " 
+                                                data-bind="value: EmailC" 
+                                                data-val="true" 
+                                                data-val-required="name is required">
+                                                <label for="">البريد الالكترونى   </label>
+                                                </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" style="margin: auto;">
+                                        <div class="form-group">
+                                            <div class="icon-box">
+                                                <!-- <i class="fa fa-lock icon-input"></i> -->
+                                            </div>
+                                            <div class="field">
+                                            <input 
+                                                id="name" 
+                                                name="name" 
+                                                type="password" 
+                                                class="" 
+                                                placeholder="   " 
+                                                data-bind="value: PasswordC" 
+                                                data-val="true" 
+                                                data-val-required="name is required">
+                                                <label for="">كلمة السر</label>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="msf-view">
+                                <div class="row">
+                                    <div class="col-md-7" style="margin: auto;">
+                                        <div class="form-group phone-number">
+                                            
+                                            <div class="field"> 
+                                            <input 
+                                                dir='ltr'
+                                                id="name" 
+                                                name="name" 
+                                                type="number" 
+                                                class="" 
+                                                placeholder="     " 
+                                                data-bind="value: PhoneC" 
+                                                data-val="true" 
+                                                data-val-required="name is required">
+                                                <label for=""> رقم الهاتف </label>
+                                                <div class="code">
+
+                                                    <span class="d-inline-block" dir="ltr">+966</span>
+                                                    <img src="{% static 'img/saudi-arabia.png' %}">
+                                                </div>
+                                               
+                                                </div>
+                                        </div>
+                                    </div>
+                                    
+                            
+                                </div>
+                            </div>
+
+                            
+                        </div>
+
+
+                        <div class="msf-navigation">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <button type="button" data-type="back" class="btn msf-nav-button"><i class="fa fa-chevron-right"></i> السابق  </button>
+                                </div>
+
+                                <div class="col-md-6 ">
+                                    <button type="button" data-type="next" class="btn msf-nav-button"> التالي   <i class="fa fa-chevron-left"></i></button>
+                                    <button type="submit" data-type="submit" class="btn msf-nav-button">ارسال</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <!-- End Boxes  register Company -->     
+
+
     <footer class="footer">
             <!-- START COPYRIGHT -->
             <div class="copyright animated fadeInUp visible float-left" data-animation="fadeInUp" data-animation-delay="500">
