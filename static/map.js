@@ -68,44 +68,44 @@ nightMode.addEventListener('click', e => {
     }
 })
 
-changing.addEventListener('click', e => {
+// changing.addEventListener('click', e => {
 
     
 
-    if (dark == true) {
+//     if (dark == true) {
 
-        map.setStyle('mapbox://styles/mapbox/streets-v11');
-        console.log(Satellite);
-        changing.style.backgroundImage = "url('/static/v10.jpg')";
-        changing.style.color = "#99cc34";
-        dark = false;
-        if (localStorage.getItem('source_box') != null || localStorage.getItem('source_Layer') != null) {
-            let source_box = localStorage.getItem('source_box');
-            let source_Layer = localStorage.getItem('source_Layer');
-            map.removeLayer(source_Layer);
-            map.removeSource(source_box);
-            localStorage.removeItem('source_Layer');
-            localStorage.removeItem('source_box');
-        }
+//         map.setStyle('mapbox://styles/mapbox/streets-v11');
+//         console.log(Satellite);
+//         changing.style.backgroundImage = "url('/static/v10.jpg')";
+//         changing.style.color = "#99cc34";
+//         dark = false;
+//         if (localStorage.getItem('source_box') != null || localStorage.getItem('source_Layer') != null) {
+//             let source_box = localStorage.getItem('source_box');
+//             let source_Layer = localStorage.getItem('source_Layer');
+//             map.removeLayer(source_Layer);
+//             map.removeSource(source_box);
+//             localStorage.removeItem('source_Layer');
+//             localStorage.removeItem('source_box');
+//         }
 
 
-    } else if (dark == false) {
+//     } else if (dark == false) {
 
-        map.setStyle('mapbox://styles/moayad8altamimi/ckcijutu90b231inzpk1sht64');
-        changing.style.backgroundImage = "url('/static/satellite..jpg')";
-        changing.style.color = "#99cc34";
-        dark = true;
-        if (localStorage.getItem('source_box') != null || localStorage.getItem('source_Layer') != null) {
-            let source_box = localStorage.getItem('source_box');
-            let source_Layer = localStorage.getItem('source_Layer');
-            map.removeLayer(source_Layer);
-            map.removeSource(source_box);
-            localStorage.removeItem('source_Layer');
-            localStorage.removeItem('source_box');
-        }
-    }
+//         map.setStyle('mapbox://styles/moayad8altamimi/ckcijutu90b231inzpk1sht64');
+//         changing.style.backgroundImage = "url('/static/satellite..jpg')";
+//         changing.style.color = "#99cc34";
+//         dark = true;
+//         if (localStorage.getItem('source_box') != null || localStorage.getItem('source_Layer') != null) {
+//             let source_box = localStorage.getItem('source_box');
+//             let source_Layer = localStorage.getItem('source_Layer');
+//             map.removeLayer(source_Layer);
+//             map.removeSource(source_box);
+//             localStorage.removeItem('source_Layer');
+//             localStorage.removeItem('source_box');
+//         }
+//     }
 
-})
+// })
 
 
 
