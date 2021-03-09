@@ -354,7 +354,7 @@ fetch(url).then(response => response.json()).then(data => {
 
 
         Select_all.addEventListener('click', function() {
-
+        
             if (Plan.value == '' || Block.value == '' || Parcel.value == '' || District.value == '') {
 
                 alert('الرجاء إدخال جميع الحقول');
@@ -441,12 +441,16 @@ fetch(url).then(response => response.json()).then(data => {
                     zoom: 17,
 
                 });
+          
 
             }
 
-
         })
-
+        
+        Select_all.addEventListener('click', function () {
+            homeelm = document.getElementById('databoxshowmowlow');
+            homeelm.click();
+        })
 
 
 
